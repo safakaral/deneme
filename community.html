@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="dark" lang="tr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>CRYPEATS - Topluluk</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#FF7F00",
+            "background-light": "#f6f8f6",
+            "background-dark": "#121212",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="flex flex-1 justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 py-5">
+                <div class="layout-content-container flex w-full max-w-[960px] flex-1 flex-col">
+                    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-4 sm:px-6 md:px-10 py-3">
+                        <div class="flex items-center gap-4 text-white">
+                            <div class="size-5 text-primary">
+                                <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">CRYPEATS</h2>
+                        </div>
+                        <div class="hidden md:flex flex-1 justify-end gap-8">
+                            <div class="flex items-center gap-9">
+                                <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html">Ana Sayfa</a>
+                                <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="tokenomics.html">Tokenomics</a>
+                                <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="swap.html">EATS Al</a>
+                                <a class="text-primary text-sm font-bold leading-normal" href="community.html">Topluluk</a>
+                            </div>
+                        </div>
+                        <div class="md:hidden">
+                            <button class="text-white" id="mobile-menu-button">
+                                <span class="material-symbols-outlined">menu</span>
+                            </button>
+                        </div>
+                    </header>
+
+                    <main class="flex-grow">
+                        <div class="@container py-10 sm:py-16">
+                            <div class="@[480px]:p-4">
+                                <div class="flex min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4 text-center" data-alt="Abstract green and dark geometric pattern" style='background-image: linear-gradient(rgba(18, 21, 18, 0.8) 0%, rgba(18, 21, 18, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCsIXGIgbub5XZg2deGVOwIa1X7DAMzQa2wRs7pL4XaEecwseOfCfiS3jilxUWpV7kxbIPj4G_I2a9OQdNBLSPkR5Zp8wxE6hogngcCiXMekilsMr8aK5pphrvBNHQqRUYh-v6y4VPn0-zEXMiOa6mEsPjgqI2Yx7mf-g4S02vq74sjdpZP21UBSPzSZTWcwb_CSBmhBno9Os69cfL4LNeso12RJZM3ZjseDp2koCpkS_IsBAIpJfhzkt2Gzktaut_4FisOB-6INAHC");'>
+                                    <div class="flex flex-col gap-2">
+                                        <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                            CRYPEATS Devrimine Katılın
+                                        </h1>
+                                        <h2 class="text-gray-300 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-xl mx-auto">
+                                            Güncel kalın, diğer yemek severlerle bağlantı kurun ve yemek siparişinin geleceğinin bir parçası olun.
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Topluluğumuza Katılın</h2>
+                        <div class="grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-4 p-4">
+                            <a class="flex flex-1 gap-4 rounded-lg border border-[#363636] bg-[#1a1a1a] p-4 flex-col justify-between hover:border-primary transition-all duration-300 group" href="https://discord.gg/crypeats" target="_blank">
+                                <span class="material-symbols-outlined text-white text-3xl">chat</span>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-white text-base font-bold leading-tight group-hover:text-primary transition-colors">Discord</h3>
+                                    <p class="text-gray-400 text-sm font-normal leading-normal">Toplulukla sohbet edin</p>
+                                </div>
+                            </a>
+                            <a class="flex flex-1 gap-4 rounded-lg border border-[#363636] bg-[#1a1a1a] p-4 flex-col justify-between hover:border-primary transition-all duration-300 group" href="https://t.me/crypeats" target="_blank">
+                                <span class="material-symbols-outlined text-white text-3xl">send</span>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-white text-base font-bold leading-tight group-hover:text-primary transition-colors">Telegram</h3>
+                                    <p class="text-gray-400 text-sm font-normal leading-normal">Anında duyurular alın</p>
+                                </div>
+                            </a>
+                            <a class="flex flex-1 gap-4 rounded-lg border border-[#363636] bg-[#1a1a1a] p-4 flex-col justify-between hover:border-primary transition-all duration-300 group" href="https://twitter.com/crypeats" target="_blank">
+                                <span class="material-symbols-outlined text-white text-3xl">campaign</span>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-white text-base font-bold leading-tight group-hover:text-primary transition-colors">Twitter</h3>
+                                    <p class="text-gray-400 text-sm font-normal leading-normal">Canlı güncellemeleri takip edin</p>
+                                </div>
+                            </a>
+                            <a class="flex flex-1 gap-4 rounded-lg border border-[#363636] bg-[#1a1a1a] p-4 flex-col justify-between hover:border-primary transition-all duration-300 group" href="https://youtube.com/crypeats" target="_blank">
+                                <span class="material-symbols-outlined text-white text-3xl">smart_display</span>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-white text-base font-bold leading-tight group-hover:text-primary transition-colors">YouTube</h3>
+                                    <p class="text-gray-400 text-sm font-normal leading-normal">En son içeriklerimizi izleyin</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="pt-12">
+                            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Son Güncellemeler</h2>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
+                            <div class="flex flex-col overflow-hidden rounded-lg border border-[#363636] bg-[#1a1a1a] group hover:border-primary/80 transition-all duration-300">
+                                <img alt="Abstract cryptocurrency network visualization" class="h-40 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzu8MQSKulfvfIqFYONGW4SH1J2oiQsQGaizxNYc9YTPkGFrloli8wC4s1fNy0ED7vwEdICWcbElK_LGMX6Rux0z7NQD8zNKi5j2LvTX5TlBdl8nPIjKzJg8EYIH_FNnd-R_tUc_7WWViblHX_eJS4G5PFSEwk-TypWO-DnAkxLpn3rqxNCN7JfKJqkfk3x2UYlUbq2D-HjrqXIh3lqkvmJt5tZRfmj1tNyCNQcvBKnHjYRo-cIGYYlMdDvDuzJxV6ACsmXFowGKxm"/>
+                                <div class="p-5 flex flex-col flex-grow">
+                                    <h3 class="text-lg font-bold text-white mb-2">CRYPEATS, FoodChain ile Stratejik Ortaklık Duyurdu</h3>
+                                    <p class="text-gray-400 text-sm mb-4 flex-grow">Tedarik zinciri şeffaflığını artırmak ve kullanıcılarımıza daha fazla değer getirmek için FoodChain ile ortaklık kurmaktan heyecan duyuyoruz.</p>
+                                    <a class="text-primary font-bold text-sm self-start group-hover:underline" href="#">Devamını Oku →</a>
+                                </div>
+                            </div>
+                            <div class="flex flex-col overflow-hidden rounded-lg border border-[#363636] bg-[#1a1a1a] group hover:border-primary/80 transition-all duration-300">
+                                <img alt="A person holding a smartphone showing a mobile app" class="h-40 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ_rgSB4_r351Y7bqm3xmYTaGiQy0FmUr7sfL3jInAJkl8bkYwXN_YGLOpiw_RuIc-P4jNvSs1DWqk4YUZ0uGGDN8koXlJcPLJYwTpYVGWvA81tfyycuNDrqCYrakD4epzXS3Fuh6uXC7cPu70ex766A9eW2ohLMHBXaGrrhFLowy58AgQmNMCwPyNlMwEPpfyhwYo82P8ndPO7E1sW0FI0uzp57_YOs2oUKz43N8WK5jK60h1sZe_Ou1ChN3UiK9g_5demvBZD7vX"/>
+                                <div class="p-5 flex flex-col flex-grow">
+                                    <h3 class="text-lg font-bold text-white mb-2">CRYPEATS Uygulamasının 2.0 Versiyonu Yayında!</h3>
+                                    <p class="text-gray-400 text-sm mb-4 flex-grow">Yenilenen arayüz, daha hızlı sipariş işleme ve daha düşük gas ücretleri gibi yeni özellikleri keşfedin. Hemen güncelleyin!</p>
+                                    <a class="text-primary font-bold text-sm self-start group-hover:underline" href="#">Devamını Oku →</a>
+                                </div>
+                            </div>
+                            <div class="flex flex-col overflow-hidden rounded-lg border border-[#363636] bg-[#1a1a1a] group hover:border-primary/80 transition-all duration-300">
+                                <img alt="Digital art representing community and connection in Web3" class="h-40 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAB8o2QafumqSdEMlpKx0hW-oPLiqySMBG3ioEgm05Y6JFmwJ-N-miGYpbva4cSG6bUmATHA7p74Ls1WMVqOFEEZK9tJVlYjTXq1vTnnh_kiEMEAhBnHI5UB13B5L3BytgrLFQflvP7QzVrnA9xg8yjl-8Yl2SefGDL7rPW9DwINmf9MKJzVhwKxf0us7g4uXmlX1a5zzbwxWDQx0-AFFzdaTr4TaBbyE9ap66j-X9DTToXK3MFqgBbjtiXY2NIMsXDcH1bc8Dca_q"/>
+                                <div class="p-5 flex flex-col flex-grow">
+                                    <h3 class="text-lg font-bold text-white mb-2">Topluluk Yönetişimi: Bir Sonraki Özellik İçin Oyunuzu Kullanın</h3>
+                                    <p class="text-gray-400 text-sm mb-4 flex-grow">Merkeziyetsiz bir platform olarak, sesiniz önemli. Bir sonraki büyük özellik geliştirme teklifimiz için oyunuzu kullanın.</p>
+                                    <a class="text-primary font-bold text-sm self-start group-hover:underline" href="#">Devamını Oku →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-12 px-4">
+                            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-5 pt-5 text-center">Sıkça Sorulan Sorular</h2>
+                            <div class="mb-8 max-w-2xl mx-auto">
+                                <div class="relative">
+                                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+                                    <input class="w-full rounded-lg border border-[#363636] bg-[#1a1a1a] py-2.5 pl-10 pr-4 text-white placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors" placeholder="Soruları ara..." type="text" id="faq-search"/>
+                                </div>
+                            </div>
+                            <div class="space-y-4 max-w-2xl mx-auto" id="faq-container">
+                                <details class="group rounded-lg bg-[#1a1a1a] p-4 border border-[#363636] hover:border-primary/80 transition-all duration-300">
+                                    <summary class="flex cursor-pointer items-center justify-between">
+                                        <h3 class="text-base font-bold text-white">CRYPEATS nedir?</h3>
+                                        <span class="material-symbols-outlined text-white transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <p class="mt-4 text-sm text-gray-400">CRYPEATS, müşterileri doğrudan restoranlarla buluşturan, daha düşük ücretler, şeffaf incelemeler ve yerel EATS token'ı aracılığıyla ödüller sunan Web3 teknolojisinden yararlanan merkeziyetsiz bir yemek sipariş platformudur.</p>
+                                </details>
+                                <details class="group rounded-lg bg-[#1a1a1a] p-4 border border-[#363636] hover:border-primary/80 transition-all duration-300">
+                                    <summary class="flex cursor-pointer items-center justify-between">
+                                        <h3 class="text-base font-bold text-white">EATS token'ını nasıl kullanırım?</h3>
+                                        <span class="material-symbols-outlined text-white transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <p class="mt-4 text-sm text-gray-400">EATS token'ı, CRYPEATS ekosisteminin yardımcı token'ıdır. Siparişler için ödeme yapmak, indirimler almak, platform yönetişimine katılmak ve stake ederek veya likidite sağlayarak ödüller kazanmak için kullanabilirsiniz.</p>
+                                </details>
+                                <details class="group rounded-lg bg-[#1a1a1a] p-4 border border-[#363636] hover:border-primary/80 transition-all duration-300">
+                                    <summary class="flex cursor-pointer items-center justify-between">
+                                        <h3 class="text-base font-bold text-white">Web3 nedir ve yemek siparişi için neden önemlidir?</h3>
+                                        <span class="material-symbols-outlined text-white transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <p class="mt-4 text-sm text-gray-400">Web3, blockchain teknolojisi üzerine inşa edilmiş internetin bir sonraki evrimidir. Yemek siparişi için, kullanıcılar ve restoranlar için daha fazla kontrol, aracıları ortadan kaldırarak daha düşük maliyetler ve ödemeler ve incelemeler için daha güvenli ve şeffaf bir sistem anlamına gelir.</p>
+                                </details>
+                                <details class="group rounded-lg bg-[#1a1a1a] p-4 border border-[#363636] hover:border-primary/80 transition-all duration-300">
+                                    <summary class="flex cursor-pointer items-center justify-between">
+                                        <h3 class="text-base font-bold text-white">CRYPEATS'ta verilerim güvende mi?</h3>
+                                        <span class="material-symbols-outlined text-white transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <p class="mt-4 text-sm text-gray-400">Evet. Web3 teknolojisini kullanarak, kripto cüzdanınızı doğrudan platformumuza bağlarsınız, yani kredi kartı bilgileri gibi hassas kişisel bilgileri paylaşmanıza gerek yoktur. Verileriniz ve varlıklarınız üzerinde tam kontrole sahipsiniz.</p>
+                                </details>
+                                <details class="group rounded-lg bg-[#1a1a1a] p-4 border border-[#363636] hover:border-primary/80 transition-all duration-300">
+                                    <summary class="flex cursor-pointer items-center justify-between">
+                                        <h3 class="text-base font-bold text-white">Restoranlar platforma nasıl katılabilir?</h3>
+                                        <span class="material-symbols-outlined text-white transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <p class="mt-4 text-sm text-gray-400">CRYPEATS'a katılmak isteyen restoranlar, ortak portalımız aracılığıyla kayıt olabilir. Süreç basittir ve Web3 pazarına erişmelerine, komisyon ücretlerini düşürmelerine ve ödemeleri neredeyse anında almalarına olanak tanır.</p>
+                                </details>
+                            </div>
+                        </div>
+                    </main>
+
+                    <footer class="mt-20 border-t border-solid border-white/10 text-white">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-4 sm:px-6 md:px-10 py-10">
+                            <div class="col-span-1 md:col-span-2">
+                                <div class="flex items-center gap-4">
+                                    <div class="size-5 text-primary">
+                                        <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                            <path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">CRYPEATS</h2>
+                                </div>
+                                <p class="mt-4 text-sm text-gray-400 max-w-sm">Merkeziyetsiz yemek siparişinin geleceği. Topluluğumuza katılın ve devrimin bir parçası olun.</p>
+                            </div>
+                            <div class="col-span-1">
+                                <h3 class="font-bold mb-4">Hızlı Bağlantılar</h3>
+                                <ul class="space-y-2 text-sm text-gray-400">
+                                    <li><a class="hover:text-primary transition-colors" href="index.html">Ana Sayfa</a></li>
+                                    <li><a class="hover:text-primary transition-colors" href="tokenomics.html">Tokenomics</a></li>
+                                    <li><a class="hover:text-primary transition-colors" href="swap.html">EATS Al</a></li>
+                                    <li><a class="hover:text-primary transition-colors" href="community.html">Topluluk</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-span-1">
+                                <h3 class="font-bold mb-4">Bizi Takip Edin</h3>
+                                <div class="flex space-x-4">
+                                    <a class="text-gray-400 hover:text-primary transition-colors" href="https://discord.gg/crypeats" target="_blank"><span class="material-symbols-outlined text-2xl">chat</span></a>
+                                    <a class="text-gray-400 hover:text-primary transition-colors" href="https://t.me/crypeats" target="_blank"><span class="material-symbols-outlined text-2xl">send</span></a>
+                                    <a class="text-gray-400 hover:text-primary transition-colors" href="https://twitter.com/crypeats" target="_blank"><span class="material-symbols-outlined text-2xl">campaign</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-t border-solid border-white/10 mt-6 py-6 px-4 sm:px-6 md:px-10">
+                            <p class="text-center text-sm text-gray-400">© 2025 CRYPEATS. Tüm hakları saklıdır.</p>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobil menü butonu
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    alert('Mobil menü açılacak. Navigasyon bağlantıları mevcut.');
+                });
+            }
+
+            // FAQ arama işlevselliği
+            const faqSearch = document.getElementById('faq-search');
+            const faqContainer = document.getElementById('faq-container');
+            const faqItems = faqContainer.querySelectorAll('details');
+
+            if (faqSearch) {
+                faqSearch.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    
+                    faqItems.forEach(item => {
+                        const question = item.querySelector('h3').textContent.toLowerCase();
+                        const answer = item.querySelector('p').textContent.toLowerCase();
+                        
+                        if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // Tüm FAQ öğelerini açma/kapama işlevselliği
+            faqItems.forEach(item => {
+                item.addEventListener('toggle', function() {
+                    // Diğer tüm FAQ öğelerini kapat
+                    if (this.open) {
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== this) {
+                                otherItem.open = false;
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Sosyal medya bağlantıları için tıklama olayları
+            const socialLinks = document.querySelectorAll('a[href="#"]');
+            socialLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const platform = this.querySelector('h3').textContent;
+                    alert(`${platform} bağlantısı yakında aktif olacak!`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

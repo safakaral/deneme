@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html class="dark" lang="tr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>CRYPEATS - Tokenomics</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#FF7A00",
+              "background-light": "#f6f8f6",
+              "background-dark": "#122112",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#254627] px-4 sm:px-6 md:px-10 py-3">
+                        <div class="flex items-center gap-4 text-white">
+                            <div class="size-6 text-primary">
+                                <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">CRYPEATS</h2>
+                        </div>
+                        <div class="hidden md:flex flex-1 justify-end items-center gap-8">
+                            <div class="flex items-center gap-9">
+                                <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="index.html">Ana Sayfa</a>
+                                <a class="text-primary text-sm font-medium leading-normal" href="tokenomics.html">Tokenomics</a>
+                                <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="swap.html">EATS Al</a>
+                                <a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="community.html">Topluluk</a>
+                            </div>
+                        </div>
+                        <button class="md:hidden text-white" id="mobile-menu-button">
+                            <span class="material-symbols-outlined text-3xl">menu</span>
+                        </button>
+                    </header>
+
+                    <main class="flex flex-col gap-12 sm:gap-16 md:gap-20 py-10 sm:py-16">
+                        <div class="px-4">
+                            <div class="flex flex-col gap-6 text-center items-center">
+                                <div class="flex flex-col gap-2">
+                                    <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] sm:text-5xl md:text-6xl">EATS Tokenomics Planı</h1>
+                                    <h2 class="text-gray-300 text-sm font-normal leading-normal sm:text-base max-w-2xl">$EATS tokenı, Polygon Network üzerinde merkeziyetsiz bir yemek sipariş ağını güçlendirmek ve katılımcılarını ödüllendirmek için tasarlanmış CRYPEATS ekosisteminin temelidir.</h2>
+                                </div>
+                                <div class="flex flex-wrap gap-3 justify-center">
+                                    <a href="swap.html" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 sm:h-12 sm:px-5 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] sm:text-base hover:bg-opacity-80 transition-colors">
+                                        <span class="truncate">EATS Token Satın Al</span>
+                                    </a>
+                                    <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 sm:h-12 sm:px-5 bg-[#254627] text-white text-sm font-bold leading-normal tracking-[0.015em] sm:text-base hover:bg-opacity-80 transition-colors" id="whitepaper-button">
+                                        <span class="truncate">Whitepaper Oku</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-4 p-4">
+                            <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#366337] bg-[#254627]/20 hover:border-primary transition-colors">
+                                <p class="text-gray-300 text-base font-medium leading-normal">Toplam Arz</p>
+                                <p class="text-white tracking-light text-2xl font-bold leading-tight">1,000,000,000</p>
+                            </div>
+                            <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#366337] bg-[#254627]/20 hover:border-primary transition-colors">
+                                <p class="text-gray-300 text-base font-medium leading-normal">Token Sembolü</p>
+                                <p class="text-white tracking-light text-2xl font-bold leading-tight">$EATS</p>
+                            </div>
+                            <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#366337] bg-[#254627]/20 hover:border-primary transition-colors">
+                                <p class="text-gray-300 text-base font-medium leading-normal">Ağ</p>
+                                <p class="text-white tracking-light text-2xl font-bold leading-tight">Polygon</p>
+                            </div>
+                            <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-[#366337] bg-[#254627]/20 hover:border-primary transition-colors">
+                                <p class="text-gray-300 text-base font-medium leading-normal">DEX Vergisi</p>
+                                <p class="text-white tracking-light text-2xl font-bold leading-tight">%3 Alım / %3 Satım</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-8">
+                            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-0 pt-5 text-center">Token Dağılımı</h2>
+                            <div class="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 py-6">
+                                <div class="relative w-64 h-64 sm:w-80 sm:h-80 flex items-center justify-center">
+                                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                        <circle cx="18" cy="18" fill="transparent" r="15.9154943092" stroke="#254627" stroke-width="3"></circle>
+                                        <circle class="transition-all duration-500" cx="18" cy="18" fill="transparent" r="15.9154943092" stroke="#FF7A00" stroke-dasharray="35, 100" stroke-dashoffset="0" stroke-width="3"></circle>
+                                        <circle class="transition-all duration-500" cx="18" cy="18" fill="transparent" r="15.9154943092" stroke="#ff9c40" stroke-dasharray="25, 100" stroke-dashoffset="-35" stroke-width="3"></circle>
+                                        <circle class="transition-all duration-500" cx="18" cy="18" fill="transparent" r="15.9154943092" stroke="#ffb773" stroke-dasharray="15, 100" stroke-dashoffset="-60" stroke-width="3"></circle>
+                                        <circle class="transition-all duration-500" cx="18" cy="18" fill="transparent" r="15.9154943092" stroke="#ffd2a6" stroke-dasharray="15, 100" stroke-dashoffset="-75" stroke-width="3"></circle>
+                                        <circle class="transition-all duration-500" cx="18" cy="18" fill="transparent" r="15.9154943092" stroke="#ffe5cc" stroke-dasharray="10, 100" stroke-dashoffset="-90" stroke-width="3"></circle>
+                                    </svg>
+                                    <div class="absolute flex flex-col items-center justify-center">
+                                        <span class="text-4xl sm:text-5xl font-bold text-white">1B</span>
+                                        <span class="text-gray-300 text-sm">Toplam Arz</span>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 pt-6 lg:pt-0">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-4 h-4 rounded-sm bg-[#FF7A00]"></div>
+                                        <p class="text-white"><span class="font-bold">%35</span> Kullanıcı Ödülleri</p>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-4 h-4 rounded-sm bg-[#ff9c40]"></div>
+                                        <p class="text-white"><span class="font-bold">%25</span> Geliştirme & Hazine</p>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-4 h-4 rounded-sm bg-[#ffb773]"></div>
+                                        <p class="text-white"><span class="font-bold">%15</span> Topluluk & Pazarlama</p>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-4 h-4 rounded-sm bg-[#ffd2a6]"></div>
+                                        <p class="text-white"><span class="font-bold">%15</span> Ekip & Danışmanlar</p>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-4 h-4 rounded-sm bg-[#ffe5cc]"></div>
+                                        <p class="text-white"><span class="font-bold">%10</span> Likidite</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-6">
+                            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pt-5 text-center">Kilitleme & Dağıtım Takvimi</h2>
+                            <div class="px-4 overflow-x-auto">
+                                <table class="w-full min-w-[600px] text-left border-collapse">
+                                    <thead>
+                                        <tr>
+                                            <th class="p-4 border-b border-[#366337] text-gray-300 font-medium">Dağılım</th>
+                                            <th class="p-4 border-b border-[#366337] text-gray-300 font-medium">%</th>
+                                            <th class="p-4 border-b border-[#366337] text-gray-300 font-medium">Açıklama</th>
+                                            <th class="p-4 border-b border-[#366337] text-gray-300 font-medium">Kilitleme / Dağıtım</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-white">
+                                        <tr class="hover:bg-[#254627]/20">
+                                            <td class="p-4 border-b border-[#254627] align-top font-medium">Likidite (DEX & CEX)</td>
+                                            <td class="p-4 border-b border-[#254627] align-top">%10</td>
+                                            <td class="p-4 border-b border-[#254627] align-top text-sm text-gray-300">Merkeziyetsiz ve merkezi borsalarda istikrarlı bir pazar sağlamak için.</td>
+                                            <td class="p-4 border-b border-[#254627] align-top text-sm text-gray-300">%50 DEX için TGE'de (kilitli), %50 CEX listeleri için (12 ay boyunca dağıtılır).</td>
+                                        </tr>
+                                        <tr class="hover:bg-[#254627]/20">
+                                            <td class="p-4 border-b border-[#254627] align-top font-medium">Ekip & Danışmanlar</td>
+                                            <td class="p-4 border-b border-[#254627] align-top">%15</td>
+                                            <td class="p-4 border-b border-[#254627] align-top text-sm text-gray-300">Temel ekibi ve stratejik danışmanları ödüllendirmek için.</td>
+                                            <td class="p-4 border-b border-[#254627] align-top text-sm text-gray-300">12 aylık kilitleme, ardından 36 ay boyunca doğrusal dağıtım.</td>
+                                        </tr>
+                                        <tr class="hover:bg-[#254627]/20">
+                                            <td class="p-4 border-b border-[#254627] align-top font-medium">Topluluk & Pazarlama</td>
+                                            <td class="p-4 border-b border-[#254627] align-top">%15</td>
+                                            <td class="p-4 border-b border-[#254627] align-top text-sm text-gray-300">Airdroplar, ortaklıklar ve kullanıcı tabanını büyütmek için kampanyalar.</td>
+                                            <td class="p-4 border-b border-[#254627] align-top text-sm text-gray-300">%10 TGE'de, ardından 24 ay boyunca doğrusal dağıtım.</td>
+                                        </tr>
+                                        <tr class="hover:bg-[#254627]/20">
+                                            <td class="p-4 border-b border-[#254627] align-top font-medium">Geliştirme & Hazine</td>
+                                            <td class="p-4 border-b border-[#254627] align-top">%25</td>
+                                            <td class="p-4 border-b border-[#254627] align-top text-sm text-gray-300">Devam eden platform geliştirmesi ve ekosistem girişimleri için fon.</td>
+                                            <td class="p-4 border-b border-[#254627] align-top text-sm text-gray-300">6 aylık kilitleme, ardından 48 ay boyunca doğrusal dağıtım.</td>
+                                        </tr>
+                                        <tr class="hover:bg-[#254627]/20">
+                                            <td class="p-4 font-medium align-top">Kullanıcı Ödülleri</td>
+                                            <td class="p-4 align-top">%35</td>
+                                            <td class="p-4 align-top text-sm text-gray-300">Staking ve Dine2Earn programları aracılığıyla kullanıcıları teşvik etmek.</td>
+                                            <td class="p-4 align-top text-sm text-gray-300">Kullanıcı aktivitesine bağlı olarak 5 yıl boyunca algoritmik olarak dağıtılır.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-6">
+                            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pt-5 text-center">Vergi Mekanizması (DEX)</h2>
+                            <div class="px-4 text-center">
+                                <p class="text-gray-300 max-w-2xl mx-auto">Sürdürülebilir büyüme ve sağlam bir likidite havuzu sağlamak için tüm DEX işlemlerine %3 alım ve %3 satım vergisi uygulanır.</p>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-8">
+                                    <div class="flex flex-col items-center gap-2 p-6 rounded-lg border border-transparent hover:border-[#366337] hover:bg-[#254627]/20 transition-all">
+                                        <h3 class="text-3xl font-bold text-primary">%1</h3>
+                                        <p class="font-bold text-white">Pazarlama</p>
+                                        <p class="text-gray-400 text-sm">Tanıtım kampanyalarını ve ortaklıkları destekler.</p>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2 p-6 rounded-lg border border-transparent hover:border-[#366337] hover:bg-[#254627]/20 transition-all">
+                                        <h3 class="text-3xl font-bold text-primary">%1</h3>
+                                        <p class="font-bold text-white">Hazine</p>
+                                        <p class="text-gray-400 text-sm">Operasyonel maliyetleri ve geliştirmeyi destekler.</p>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2 p-6 rounded-lg border border-transparent hover:border-[#366337] hover:bg-[#254627]/20 transition-all">
+                                        <h3 class="text-3xl font-bold text-primary">%1</h3>
+                                        <p class="font-bold text-white">Otomatik LP</p>
+                                        <p class="text-gray-400 text-sm">Daha iyi fiyat istikrarı için likidite havuzunu güçlendirir.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-6">
+                            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pt-5 text-center">$EATS Token Kullanım Alanları</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+                                <div class="flex items-start gap-4 p-6 rounded-lg border border-transparent hover:border-[#366337] hover:bg-[#254627]/20 transition-all">
+                                    <span class="material-symbols-outlined text-primary text-4xl">sell</span>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white">İndirimler & Kuponlar</h3>
+                                        <p class="text-gray-300 text-sm">Siparişler için $EATS tokenlarını kullanın ve özel indirimler, cashback ve özel kuponlar alın.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4 p-6 rounded-lg border border-transparent hover:border-[#366337] hover:bg-[#254627]/20 transition-all">
+                                    <span class="material-symbols-outlined text-primary text-4xl">account_balance</span>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white">Staking & Yönetişim</h3>
+                                        <p class="text-gray-300 text-sm">Tokenlarınızı stake ederek ödül kazanın ve önemli platform kararlarında oy kullanarak yönetişime katılın.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4 p-6 rounded-lg border border-transparent hover:border-[#366337] hover:bg-[#254627]/20 transition-all">
+                                    <span class="material-symbols-outlined text-primary text-4xl">restaurant</span>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white">Dine2Earn</h3>
+                                        <p class="text-gray-300 text-sm">Yemek siparişi vererek, yorum bırakarak ve yeni kullanıcılar referans ederek $EATS kazanın.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4 p-6 rounded-lg border border-transparent hover:border-[#366337] hover:bg-[#254627]/20 transition-all">
+                                    <span class="material-symbols-outlined text-primary text-4xl">workspace_premium</span>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white">Premium Özellikler</h3>
+                                        <p class="text-gray-300 text-sm">Premium özelliklere özel erişim, öncelikli destek ve özel ortak promosyonlarının kilidini açın.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-8">
+                            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pt-5 text-center">Pazarlama ve Lansman Stratejisi</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+                                <div class="flex flex-col gap-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="flex items-center justify-center size-8 rounded-full bg-primary text-background-dark font-bold">1</div>
+                                        <h3 class="text-lg font-bold text-white">Aşama 1: Hazırlık & Topluluk Oluşturma</h3>
+                                    </div>
+                                    <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm pl-4 border-l border-[#366337] ml-4">
+                                        <li>Markalaşma & Web Sitesi Lansmanı</li>
+                                        <li>Akıllı Kontrat Denetimi</li>
+                                        <li>Tokenomics Yayını</li>
+                                        <li>Erken Erişim & Whitelist</li>
+                                    </ul>
+                                </div>
+                                <div class="flex flex-col gap-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="flex items-center justify-center size-8 rounded-full bg-primary text-background-dark font-bold">2</div>
+                                        <h3 class="text-lg font-bold text-white">Aşama 2: Lansman & Likidite</h3>
+                                    </div>
+                                    <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm pl-4 border-l border-[#366337] ml-4">
+                                        <li>Polygon'da DEX Lansmanı</li>
+                                        <li>Likidite Kilitleme</li>
+                                        <li>Polygon Influencer Kampanyaları</li>
+                                        <li>CoinGecko/CoinMarketCap Listesi</li>
+                                    </ul>
+                                </div>
+                                <div class="flex flex-col gap-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="flex items-center justify-center size-8 rounded-full bg-primary text-background-dark font-bold">3</div>
+                                        <h3 class="text-lg font-bold text-white">Aşama 3: Büyüme & Uygulama</h3>
+                                    </div>
+                                    <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm pl-4 border-l border-[#366337] ml-4">
+                                        <li>Dine2Earn Pilot Programı</li>
+                                        <li>Staking Platformu Lansmanı</li>
+                                        <li>Veri Ortaklıkları</li>
+                                        <li>Geleneksel Pazarlama & CEX Başvurusu</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-[#254627]/30 rounded-lg p-8 sm:p-12 mx-4 text-center flex flex-col items-center gap-6">
+                            <h2 class="text-3xl sm:text-4xl font-bold text-white">Devrime Katılmaya Hazır mısınız?</h2>
+                            <p class="text-gray-300 max-w-xl">CRYPEATS ekosisteminin bir parçası olun. Bugün EATS tokenlarını satın alın veya whitepaper'ı okuyarak vizyonumuzu daha derinden keşfedin.</p>
+                            <div class="flex flex-wrap gap-4 justify-center">
+                                <a href="swap.html" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-background-dark text-base font-bold leading-normal tracking-[0.015em] hover:bg-opacity-80 transition-colors">
+                                    <span class="truncate">EATS Token Satın Al</span>
+                                </a>
+                                <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-[#366337] text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-opacity-80 transition-colors" id="whitepaper-button-bottom">
+                                    <span class="truncate">Whitepaper'ı Keşfet</span>
+                                </button>
+                            </div>
+                        </div>
+                    </main>
+
+                    <footer class="text-center py-10 border-t border-[#254627] mt-10">
+                        <p class="text-gray-400 text-sm">© 2025 CRYPEATS. Tüm hakları saklıdır.</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Whitepaper butonları
+            const whitepaperButtons = document.querySelectorAll('#whitepaper-button, #whitepaper-button-bottom');
+            whitepaperButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Whitepaper yakında yayınlanacak!');
+                });
+            });
+
+            // Mobil menü butonu
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    alert('Mobil menü açılacak. Navigasyon bağlantıları mevcut.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

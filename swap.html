@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html class="dark" lang="tr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>CRYPEATS - Token Takas</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#FF7A00",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#121212",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        select.form-input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.5em 1.5em;
+        }
+        .token-dropdown {
+            position: relative;
+        }
+        .token-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 200px;
+            background: #1E1E1E;
+            border: 1px solid #333;
+            border-radius: 8px;
+            z-index: 1000;
+            margin-top: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .token-option {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .token-option:hover {
+            background-color: #2A2A2A;
+        }
+        .token-option img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        .token-option.active {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col w-full max-w-[560px] flex-1">
+                    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 py-4">
+                        <div class="flex items-center gap-4 text-white">
+                            <div class="size-6 text-primary">
+                                <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-12h2v4h-2v-4zm0 6h2v2h-2v-2z"></path>
+                                </svg>
+                            </div>
+                            <h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">CRYPEATS</h2>
+                        </div>
+                        <nav class="hidden md:flex items-center gap-6">
+                            <a class="text-white hover:text-primary transition-colors" href="index.html">Ana Sayfa</a>
+                            <a class="text-white hover:text-primary transition-colors" href="tokenomics.html">Tokenomics</a>
+                            <a class="text-primary font-bold" href="swap.html">EATS Al</a>
+                            <a class="text-white hover:text-primary transition-colors" href="community.html">Topluluk</a>
+                        </nav>
+                    </header>
+
+                    <main class="flex flex-col flex-1 mt-10">
+                        <div class="flex flex-wrap justify-between gap-3 p-4">
+                            <div class="flex w-full flex-col gap-2 text-center">
+                                <p class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Token Takas</p>
+                                <p class="text-[#B3B3B3] text-base font-normal leading-normal">Favori kripto paranızla EATS tokenları satın alın.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 flex flex-col gap-2 rounded-xl bg-[#1E1E1E] p-4 sm:p-6">
+                            <div class="mb-4">
+                                <label class="text-[#B3B3B3] text-base font-medium leading-normal mb-2 block" for="swap-platform">Takas Platformu</label>
+                                <div class="relative">
+                                    <select class="w-full h-14 bg-[#121212] border-2 border-transparent focus:border-primary rounded-lg text-white text-base font-medium pl-4 pr-10 appearance-none focus:outline-none focus:ring-0 cursor-pointer form-input" id="swap-platform">
+                                        <option value="uniswap">Uniswap</option>
+                                        <option value="pancakeswap">Pancakeswap</option>
+                                        <option value="sushiswap">Sushiswap</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                                        <span class="material-symbols-outlined">expand_more</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-col">
+                                <div class="flex justify-between items-center mb-2">
+                                    <p class="text-[#B3B3B3] text-base font-medium leading-normal">Ödeyeceğiniz</p>
+                                    <p class="text-sm text-[#B3B3B3]">Bakiye: <span id="token-balance">2.54 ETH</span></p>
+                                </div>
+                                <div class="relative flex items-center">
+                                    <input class="w-full h-16 bg-[#121212] border-2 border-transparent focus:border-primary rounded-lg text-white text-2xl font-medium p-4 pr-36 appearance-none focus:outline-none focus:ring-0" id="pay-amount" placeholder="0.0" type="number"/>
+                                    <div class="absolute right-4 flex items-center">
+                                        <button class="bg-gray-700 text-white text-sm font-bold rounded-md px-3 py-1 mr-2 hover:bg-gray-600 transition-colors" id="max-button">MAKS</button>
+                                        <div class="token-dropdown flex items-center gap-2">
+                                            <div id="selected-token" class="flex items-center gap-2 cursor-pointer">
+                                                <img alt="Ethereum logo" class="w-6 h-6 rounded-full" id="selected-token-icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjDLjvk_UtmfSdIf1a5Pp4hMzmudAkHyjdiiFRMxlYpbIE-BJMkpcQNEaaDOk-Z9mR5rsA2GASvYryRBDy5qAz0ZQnLDsh69ksmzxPaj4T-FMrl_gaAXxr907Fmc-hxPrOu8CoIq0xcVeNa42O6mOnBLN6q8Hfznf5W2KzDOu_K3EF0oiZOtDPVA24slvdw6twMeqP8oKHxQB23T0EjQEzv2nGplOC-bM8LKw9vAuvSq9DZyy59dAb4U-ZN5Ms1NenDeh_nzFOC2J9"/>
+                                                <span class="font-bold text-lg" id="selected-token-symbol">ETH</span>
+                                                <span class="material-symbols-outlined text-[#B3B3B3]">expand_more</span>
+                                            </div>
+                                            <div class="token-options" id="token-options">
+                                                <div class="token-option active" data-token="ETH" data-balance="2.54" data-icon="https://lh3.googleusercontent.com/aida-public/AB6AXuBjDLjvk_UtmfSdIf1a5Pp4hMzmudAkHyjdiiFRMxlYpbIE-BJMkpcQNEaaDOk-Z9mR5rsA2GASvYryRBDy5qAz0ZQnLDsh69ksmzxPaj4T-FMrl_gaAXxr907Fmc-hxPrOu8CoIq0xcVeNa42O6mOnBLN6q8Hfznf5W2KzDOu_K3EF0oiZOtDPVA24slvdw6twMeqP8oKHxQB23T0EjQEzv2nGplOC-bM8LKw9vAuvSq9DZyy59dAb4U-ZN5Ms1NenDeh_nzFOC2J9">
+                                                    <img alt="Ethereum" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjDLjvk_UtmfSdIf1a5Pp4hMzmudAkHyjdiiFRMxlYpbIE-BJMkpcQNEaaDOk-Z9mR5rsA2GASvYryRBDy5qAz0ZQnLDsh69ksmzxPaj4T-FMrl_gaAXxr907Fmc-hxPrOu8CoIq0xcVeNa42O6mOnBLN6q8Hfznf5W2KzDOu_K3EF0oiZOtDPVA24slvdw6twMeqP8oKHxQB23T0EjQEzv2nGplOC-bM8LKw9vAuvSq9DZyy59dAb4U-ZN5Ms1NenDeh_nzFOC2J9"/>
+                                                    <span>Ethereum (ETH)</span>
+                                                </div>
+                                                <div class="token-option" data-token="USDC" data-balance="1250.75" data-icon="https://cryptologos.cc/logos/usd-coin-usdc-logo.png">
+                                                    <img alt="USD Coin" src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png"/>
+                                                    <span>USD Coin (USDC)</span>
+                                                </div>
+                                                <div class="token-option" data-token="USDT" data-balance="980.25" data-icon="https://cryptologos.cc/logos/tether-usdt-logo.png">
+                                                    <img alt="Tether" src="https://cryptologos.cc/logos/tether-usdt-logo.png"/>
+                                                    <span>Tether (USDT)</span>
+                                                </div>
+                                                <div class="token-option" data-token="MATIC" data-balance="45.80" data-icon="https://cryptologos.cc/logos/polygon-matic-logo.png">
+                                                    <img alt="Polygon" src="https://cryptologos.cc/logos/polygon-matic-logo.png"/>
+                                                    <span>Polygon (MATIC)</span>
+                                                </div>
+                                                <div class="token-option" data-token="BNB" data-balance="1.25" data-icon="https://cryptologos.cc/logos/bnb-bnb-logo.png">
+                                                    <img alt="BNB" src="https://cryptologos.cc/logos/bnb-bnb-logo.png"/>
+                                                    <span>BNB</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center items-center my-2">
+                                <div class="rounded-full border-2 border-[#121212] bg-[#1E1E1E] p-1.5 z-10 -my-4">
+                                    <span class="material-symbols-outlined text-primary text-2xl rotate-90">swap_vert</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-col">
+                                <p class="text-[#B3B3B3] text-base font-medium leading-normal mb-2">Alacağınız</p>
+                                <div class="relative flex items-center">
+                                    <input class="w-full h-16 bg-[#121212] border-2 border-transparent rounded-lg text-white text-2xl font-medium p-4 pr-36 appearance-none focus:outline-none focus:ring-0 cursor-not-allowed" id="receive-amount" placeholder="0.0" readonly="" type="number"/>
+                                    <div class="absolute right-4 flex items-center gap-2">
+                                        <div class="size-6 text-primary">
+                                            <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-12h2v4h-2v-4zm0 6h2v2h-2v-2z"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="font-bold text-lg">EATS</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 flex flex-col gap-2 text-sm text-[#B3B3B3]">
+                                <div class="flex justify-between items-center">
+                                    <span>Fiyat</span>
+                                    <span id="price-display">1 ETH = 1,234.56 EATS</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>Kayma Toleransı</span>
+                                    <span class="text-primary">0.5%</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span>İşlem Ücreti</span>
+                                    <span>~ $5.32</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex mt-4">
+                                <button class="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-5 flex-1 bg-primary text-background-dark text-lg font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors" id="swap-button">
+                                    <span class="truncate">Takas Yap</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4 px-4">
+                            <p class="text-xs text-gray-500">"Takas Yap" butonuna tıklayarak, işleminizi güvenli bir şekilde tamamlamak için seçtiğiniz platforma yönlendirileceksiniz.</p>
+                        </div>
+                    </main>
+
+                    <footer class="mt-auto py-6 text-center text-sm text-[#B3B3B3]">
+                        <p class="mb-4">© 2025 CRYPEATS. Tüm hakları saklıdır.</p>
+                        <div class="flex justify-center gap-6">
+                            <a class="hover:text-primary" href="#">Dokümanlar</a>
+                            <a class="hover:text-primary" href="#">Destek</a>
+                            <a class="hover:text-primary" href="https://discord.gg/crypeats" target="_blank">Discord</a>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Token seçim dropdown'ı
+            const selectedToken = document.getElementById('selected-token');
+            const tokenOptions = document.getElementById('token-options');
+            const selectedTokenIcon = document.getElementById('selected-token-icon');
+            const selectedTokenSymbol = document.getElementById('selected-token-symbol');
+            const tokenBalance = document.getElementById('token-balance');
+            const payAmount = document.getElementById('pay-amount');
+            const receiveAmount = document.getElementById('receive-amount');
+            const priceDisplay = document.getElementById('price-display');
+            const maxButton = document.getElementById('max-button');
+            const swapButton = document.getElementById('swap-button');
+            
+            // Token fiyatları (simülasyon)
+            const tokenPrices = {
+                'ETH': 1234.56,
+                'USDC': 1.23,
+                'USDT': 1.22,
+                'MATIC': 567.89,
+                'BNB': 345.67
+            };
+            
+            // Token dropdown aç/kapa
+            selectedToken.addEventListener('click', function(e) {
+                e.stopPropagation();
+                tokenOptions.style.display = tokenOptions.style.display === 'block' ? 'none' : 'block';
+            });
+            
+            // Token seçimi
+            document.querySelectorAll('.token-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const token = this.getAttribute('data-token');
+                    const balance = this.getAttribute('data-balance');
+                    const icon = this.getAttribute('data-icon');
+                    
+                    // Seçilen token'ı güncelle
+                    selectedTokenIcon.src = icon;
+                    selectedTokenSymbol.textContent = token;
+                    tokenBalance.textContent = `${balance} ${token}`;
+                    
+                    // Aktif sınıfını güncelle
+                    document.querySelectorAll('.token-option').forEach(opt => {
+                        opt.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Fiyatı güncelle
+                    updatePriceDisplay(token);
+                    
+                    // Takas miktarını yeniden hesapla
+                    calculateReceiveAmount();
+                    
+                    // Dropdown'ı kapat
+                    tokenOptions.style.display = 'none';
+                });
+            });
+            
+            // Sayfa dışına tıklandığında dropdown'ı kapat
+            document.addEventListener('click', function() {
+                tokenOptions.style.display = 'none';
+            });
+            
+            // Maks butonu
+            maxButton.addEventListener('click', function() {
+                const activeToken = document.querySelector('.token-option.active');
+                const balance = activeToken.getAttribute('data-balance');
+                payAmount.value = balance;
+                calculateReceiveAmount();
+            });
+            
+            // Ödeme miktarı değiştiğinde alınacak miktarı hesapla
+            payAmount.addEventListener('input', calculateReceiveAmount);
+            
+            // Takas butonu
+            swapButton.addEventListener('click', function() {
+                const platform = document.getElementById('swap-platform').value;
+                const amount = payAmount.value;
+                const token = selectedTokenSymbol.textContent;
+                
+                if (!amount || parseFloat(amount) <= 0) {
+                    alert('Lütfen geçerli bir miktar girin.');
+                    return;
+                }
+                
+                alert(`${amount} ${token} karşılığında EATS tokenları takas edilecek. ${platform} platformuna yönlendiriliyorsunuz.`);
+                
+                // Gerçek uygulamada burada platforma yönlendirme yapılacak
+                // window.location.href = getSwapUrl(platform, token, amount);
+            });
+            
+            // Alınacak miktarı hesapla
+            function calculateReceiveAmount() {
+                const amount = parseFloat(payAmount.value) || 0;
+                const token = selectedTokenSymbol.textContent;
+                const price = tokenPrices[token];
+                
+                if (amount > 0 && price) {
+                    const receive = amount * price;
+                    receiveAmount.value = receive.toFixed(2);
+                } else {
+                    receiveAmount.value = '';
+                }
+            }
+            
+            // Fiyat görüntüsünü güncelle
+            function updatePriceDisplay(token) {
+                const price = tokenPrices[token];
+                if (price) {
+                    priceDisplay.textContent = `1 ${token} = ${price.toLocaleString()} EATS`;
+                }
+            }
+            
+            // Başlangıçta ETH fiyatını göster
+            updatePriceDisplay('ETH');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="dark" lang="tr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>CRYPEATS - Yemek Siparişinin Geleceği</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "neon-orange": "#ff6f00",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "body": ["Lato", "sans-serif"],
+                        "slogan": ["Cormorant Garamond", "serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body {
+            @apply font-body bg-background-dark text-gray-200 antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body bg-background-dark text-gray-200">
+    <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <!-- Arka Plan Görseli - DÜZELTİLDİ -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                alt="Lezzetli görünen bir yemek tabağı, koyu, bulanık bir degrade kaplama ile" 
+                class="h-full w-full object-cover" 
+                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            />
+            <div class="absolute inset-0 bg-background-dark/70 backdrop-blur-sm"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-background-dark"></div>
+        </div>
+        
+        <div class="relative z-10 flex h-full grow flex-col">
+            <header class="w-full px-4 sm:px-8 md:px-12 lg:px-20 py-6">
+                <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="size-6 text-neon-orange">
+                            <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-white text-2xl font-display font-bold">CRYPEATS</h2>
+                    </div>
+                    <nav class="hidden md:flex flex-1 justify-center">
+                        <div class="flex items-center gap-10">
+                            <a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="index.html">Ana Sayfa</a>
+                            <a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="tokenomics.html">Tokenomics</a>
+                            <a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="swap.html">EATS Al</a>
+                            <a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="community.html">Topluluk</a>
+                        </div>
+                    </nav>
+                    <div class="hidden md:flex">
+                        <a href="swap.html" class="bg-neon-orange text-background-dark px-6 py-2 rounded-full text-sm font-bold hover:bg-opacity-90 transition-all">EATS Al</a>
+                    </div>
+                    <div class="md:hidden">
+                        <button class="text-white" id="mobile-menu-button">
+                            <span class="material-symbols-outlined text-3xl">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="flex-1 flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-20">
+                <div class="w-full max-w-4xl mx-auto text-center py-20 md:py-32">
+                    <div class="flex flex-col items-center gap-8">
+                        <div class="flex flex-col gap-4">
+                            <h2 class="font-display font-bold text-5xl md:text-7xl text-neon-orange tracking-tight">EATS TOKEN</h2>
+                            <h1 class="font-display font-bold text-6xl md:text-8xl text-white tracking-tight">CRYPEATS</h1>
+                            <div class="mt-4 flex flex-col gap-2 text-white/80 font-slogan text-2xl md:text-3xl font-bold uppercase tracking-wider">
+                                <p>GELECEĞİN YEMEK SİPARİŞ ZİNCİRİ</p>
+                                <p>AKILLI KONTRATLARLA SİPARİŞ ZİNCİRİNE SEN DE KATIL</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex w-full max-w-md flex-col items-center justify-center gap-4 sm:flex-row">
+                            <a href="swap.html" class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-neon-orange text-background-dark shadow-lg shadow-neon-orange/20 hover:bg-opacity-90 transition-all duration-300 ease-in-out text-base font-bold leading-normal tracking-wide transform hover:scale-105">
+                                <span class="truncate">EATS Satın Al</span>
+                            </a>
+                            <a href="tokenomics.html" class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 border border-neon-orange text-neon-orange shadow-lg shadow-neon-orange/20 hover:bg-neon-orange hover:text-background-dark transition-all duration-300 ease-in-out text-base font-bold leading-normal tracking-wide transform hover:scale-105">
+                                <span class="truncate">Tokenomics</span>
+                            </a>
+                        </div>
+                        <div class="mt-12 w-full max-w-2xl">
+                            <div class="flex flex-col items-center gap-4 rounded-xl border border-white/10 bg-white/5 p-4 sm:flex-row sm:justify-between sm:p-5 backdrop-blur-sm">
+                                <div class="flex items-center gap-4">
+                                    <div class="flex size-10 shrink-0 items-center justify-center rounded-lg text-neon-orange">
+                                        <span class="material-symbols-outlined text-3xl">token</span>
+                                    </div>
+                                    <div class="flex flex-col text-left">
+                                        <p class="text-sm font-normal leading-normal text-gray-400">EATS Token Kontrat Adresi</p>
+                                        <p class="font-mono text-base font-normal leading-normal text-white break-all">0x1692aEA8af45167F3abfC5175A890c6a2A2e706A</p>
+                                    </div>
+                                </div>
+                                <button class="group flex size-10 shrink-0 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-white/20" id="copy-address-button">
+                                    <span class="material-symbols-outlined text-xl text-white">content_copy</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="w-full px-4 sm:px-8 md:px-12 lg:px-20 py-8">
+                <div class="flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 sm:flex-row">
+                    <p class="text-sm font-normal leading-normal text-gray-400">© 2025 CRYPEATS. Tüm hakları saklıdır.</p>
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <a class="text-gray-400 transition-colors hover:text-neon-orange" href="https://twitter.com/crypeats" target="_blank">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+                        </a>
+                        <a class="text-gray-400 transition-colors hover:text-neon-orange" href="https://t.me/crypeats" target="_blank">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1.13 18.25c-.24.16-.54.25-.85.25-.49 0-.95-.19-1.3-.54s-.54-.81-.54-1.3c0-.21.04-.42.12-.61s.2-.36.35-.51l.36-.36c.15-.14.28-.27.39-.39.11-.12.2-.23.27-.34.07-.11.13-.22.18-.33.05-.11.08-.22.11-.33.03-.11.04-.22.04-.33 0-.2-.04-.38-.12-.53s-.2-.26-.36-.35c-.16-.09-.34-.14-.54-.14-.24 0-.47.06-.67.18s-.38.27-.51.45l-1.12-1.38c.31-.38.68-.68 1.12-.91.43-.23.92-.34 1.47-.34.5 0 .96.09 1.39.27s.78.44 1.06.77.49.74.63 1.21.21.98.21 1.51c0 .24-.02.48-.06.71s-.10.45-.18.66-.17.41-.28.59-.24.34-.39.49l-.39.39c-.15.15-.28.29-.39.41s-.2.24-.27.36-.13.24-.18.35-.08.23-.11.34-.04.22-.04.33c0 .26.06.48.18.67.12.19.29.33.51.42.22.09.46.14.72.14.26 0 .51-.05.73-.14s.42-.23.58-.4l1.15 1.41c-.3.39-.67.69-1.12.91zM14 18.5c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm0-5c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path></svg>
+                        </a>
+                        <a class="text-gray-400 transition-colors hover:text-neon-orange" href="https://github.com/crypeats" target="_blank">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.286 2.866 7.92 6.838 9.143.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.853 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Kontrat adresini kopyalama butonu
+            const copyAddressButton = document.getElementById('copy-address-button');
+            if (copyAddressButton) {
+                copyAddressButton.addEventListener('click', function() {
+                    const contractAddress = '0x1692aEA8af45167F3abfC5175A890c6a2A2e706A';
+                    navigator.clipboard.writeText(contractAddress).then(function() {
+                        alert('Kontrat adresi panoya kopyalandı: ' + contractAddress);
+                    }, function(err) {
+                        console.error('Kopyalama işlemi başarısız oldu: ', err);
+                    });
+                });
+            }
+            
+            // Mobil menü butonu
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    alert('Mobil menü açılacak. Navigasyon bağlantıları mevcut.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
